@@ -1,10 +1,10 @@
 #ifndef _S_BOX_GL_H
 #define _S_BOX_GL_H
 
-#include "S_Object_gl.h"
-#include <SCD/S_Object/S_Box.h>
+#include "sch/view/S_Object_gl.h"
+#include <sch/S_Object/S_Box.h>
 
-namespace SCD
+namespace sch
 {
   class S_Box_GL: public S_Object_GL
   {

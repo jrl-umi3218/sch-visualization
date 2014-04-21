@@ -6,7 +6,7 @@
 # include <GL/glut.h>
 #endif // __APPLE__
 
-using namespace SCD;
+using namespace sch;
 
 S_Sphere_GL::S_Sphere_GL(S_Sphere * obj)
 : S_Object_GL(obj)

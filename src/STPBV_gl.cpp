@@ -1,5 +1,5 @@
 #include "STPBV_gl.h"
-#include <SCD/STP-BV/STP_BV.h>
+#include <sch/STP-BV/STP_BV.h>
 
 #if defined __APPLE__
 # include <GLUT/glut.h>
@@ -7,7 +7,7 @@
 # include <GL/glut.h>
 #endif // __APPLE__
 
-using namespace SCD;
+using namespace sch;
 
 STP_BV_GL::STP_BV_GL(STP_BV * obj)
 : S_Object_GL(obj)

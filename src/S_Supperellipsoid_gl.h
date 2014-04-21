@@ -1,10 +1,10 @@
 #ifndef _S_SUPERELLIPSOID_GL
 #define _S_SUPERELLIPSOID_GL
 
-#include "S_Object_gl.h"
-#include <SCD/S_Object/S_Superellipsoid.h>
+#include "sch/view/S_Object_gl.h"
+#include <sch/S_Object/S_Superellipsoid.h>
 
-namespace SCD
+namespace sch
 {
   class S_Superellipsoid_GL: public S_Object_GL
   {

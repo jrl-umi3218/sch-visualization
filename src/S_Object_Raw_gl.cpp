@@ -10,7 +10,7 @@
 #endif // __APPLE__
 
 using boost::math::constants::pi;
-using namespace SCD;
+using namespace sch;
 
 
 S_Object_Raw_GL::S_Object_Raw_GL(S_Object * obj)

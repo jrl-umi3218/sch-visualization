@@ -1,4 +1,5 @@
-#include "S_Object_gl.h"
+#include "sch/view/S_Object_gl.h"
+
 #include "S_Object_Raw_gl.h"
 #include "S_Box_gl.h"
 #include "S_Sphere_gl.h"
@@ -16,7 +17,7 @@
 #endif // __APPLE__
 
 using boost::math::constants::pi;
-using namespace SCD;
+using namespace sch;
 
 S_Object_GL::S_Object_GL(S_Object * obj)
 : obj_(obj)
@@ -34,7 +35,7 @@ void S_Object_GL::drawGL() const
 }
 
 
-SCD::S_Object_GL* createGL(SCD::S_Object* obj)
+sch::S_Object_GL* createGL(sch::S_Object* obj)
 {
   if (obj == 0x0)
     return 0x0;
@@ -82,9 +83,9 @@ SCD::S_Object_GL* createGL(SCD::S_Object* obj)
 }
 
 
-std::vector<SCD::S_Object_GL*> createGL(SCD::CD_Scene& scene)
+std::vector<sch::S_Object_GL*> createGL(sch::CD_Scene& scene)
 {
-  std::vector<SCD::S_Object_GL*> vec;
+  std::vector<sch::S_Object_GL*> vec;
   for (unsigned i=0; i<scene.size(); ++i)
     vec.push_back(createGL(scene[i]));
   return vec;

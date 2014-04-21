@@ -10,7 +10,7 @@
 #include <vector>
 
 using boost::math::constants::pi;
-using namespace SCD;
+using namespace sch;
 
 inline short sign(Scalar i)
 {

@@ -6,7 +6,7 @@
 # include <GL/glut.h>
 #endif // __APPLE__
 
-using namespace SCD;
+using namespace sch;
 Polyhedron_algorithms_GL::Polyhedron_algorithms_GL(Polyhedron_algorithms *pa)
 : S_Object_GL(0x0)
 , pa_(pa)

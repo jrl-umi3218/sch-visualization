@@ -1,8 +1,8 @@
-#include <SCD/S_Polyhedron/Polyhedron_algorithms.h>
-#include <SCD/STP-BV/STP_BV.h>
-#include "S_Object_gl.h"
+#include <sch/S_Polyhedron/Polyhedron_algorithms.h>
+#include <sch/STP-BV/STP_BV.h>
+#include "sch/view/S_Object_gl.h"
 
-namespace SCD
+namespace sch
 {
 	class STP_BV_GL: public S_Object_GL
 	{

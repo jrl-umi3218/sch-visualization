@@ -1,11 +1,11 @@
 #ifndef _S_OBJECT_GL_H
 #define _S_OBJECT_GL_H
 
-#include <SCD/S_Object/S_Object.h>
-#include <SCD/CD/CD_Scene.h>
+#include <sch/S_Object/S_Object.h>
+#include <sch/CD/CD_Scene.h>
 #include <boost/noncopyable.hpp>
 
-namespace SCD
+namespace sch
 {
   class S_Object_GL: boost::noncopyable
   {
@@ -28,7 +28,7 @@ namespace SCD
   };
 }
 
-SCD::S_Object_GL* createGL(SCD::S_Object*);
-std::vector<SCD::S_Object_GL*> createGL(SCD::CD_Scene&);
+sch::S_Object_GL* createGL(sch::S_Object*);
+std::vector<sch::S_Object_GL*> createGL(sch::CD_Scene&);
 
 #endif //_S_OBJECT_GL_H

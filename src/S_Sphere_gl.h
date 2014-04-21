@@ -1,10 +1,10 @@
 #ifndef _S_SPHERE_GL_H
 #define _S_SPHERE_GL_H
 
-#include "S_Object_gl.h"
-#include <SCD/S_Object/S_Sphere.h>
+#include "sch/view/S_Object_gl.h"
+#include <sch/S_Object/S_Sphere.h>
 
-namespace SCD
+namespace sch
 {
   class S_Sphere_GL : public S_Object_GL
   {
