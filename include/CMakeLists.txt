@@ -1,0 +1,5 @@
+install(FILES sch/view/S_Object_gl.h
+     DESTINATION ${CMAKE_INSTALL_PREFIX}/include/sch/view/
+     PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE
+)
+
