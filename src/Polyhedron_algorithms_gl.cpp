@@ -8,9 +8,9 @@
 
 using namespace sch;
 Polyhedron_algorithms_GL::Polyhedron_algorithms_GL(Polyhedron_algorithms *pa)
-: S_Object_GL(0x0)
-, pa_(pa)
-, displayList_(-1)
+  : S_Object_GL(0x0)
+  , pa_(pa)
+  , displayList_(-1)
 {
   createDispList();
 }
@@ -34,7 +34,7 @@ void Polyhedron_algorithms_GL::createDispList()
     glBegin(GL_TRIANGLES);
     glColor3d(0.6,0.8,0.7);
 
-    for (unsigned i=0;i<triangles.size();i++)
+    for (unsigned i=0; i<triangles.size(); i++)
     {
       glNormal3d(triangles[i].normal[0],triangles[i].normal[1],triangles[i].normal[2]);
 

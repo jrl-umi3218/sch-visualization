@@ -9,9 +9,9 @@
 using namespace sch;
 
 S_Sphere_GL::S_Sphere_GL(S_Sphere * obj)
-: S_Object_GL(obj)
-, sphere_(obj)
-, displist_(-1)
+  : S_Object_GL(obj)
+  , sphere_(obj)
+  , displist_(-1)
 {
   createDispList();
 }

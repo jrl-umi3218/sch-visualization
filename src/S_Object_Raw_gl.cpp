@@ -14,8 +14,8 @@ using namespace sch;
 
 
 S_Object_Raw_GL::S_Object_Raw_GL(S_Object * obj)
-: S_Object_GL(obj)
-, displist_(-1)
+  : S_Object_GL(obj)
+  , displist_(-1)
 {
   computeDisplayList();
 }
@@ -52,10 +52,10 @@ void S_Object_Raw_GL::computeDisplayList()
     double p1=pi<double>()*2/slices_;
     double p2=pi<double>()/(stacks_-1);
 
-    for (int i=0;i<slices_;i++)
+    for (int i=0; i<slices_; i++)
     {
       Scalar latt=pi<double>()/2-p2;
-      for (int j=0;j<stacks_-2;j++)
+      for (int j=0; j<stacks_-2; j++)
       {
         c1=cos(latt);
         c2=cos(longit);
@@ -77,7 +77,7 @@ void S_Object_Raw_GL::computeDisplayList()
     glNewList(displist_,GL_COMPILE);
     glBegin(GL_TRIANGLES);
 
-    for (int i=0;i<slices_;i++)
+    for (int i=0; i<slices_; i++)
     {
 
       glNormal3d(normals[0][0],normals[0][1],normals[0][2]);
@@ -100,9 +100,9 @@ void S_Object_Raw_GL::computeDisplayList()
       glVertex3d(points[stacks_-1+(i*(stacks_-2))][0],points[stacks_-1+(i*(stacks_-2))][1],points[stacks_-1+(i*(stacks_-2))][2]);
     }
 
-    for (int i=0;i<slices_;i++)
+    for (int i=0; i<slices_; i++)
     {
-      for (int j=0;j<stacks_-3;j++)
+      for (int j=0; j<stacks_-3; j++)
       {
         glNormal3d(normals[2+(i*(stacks_-2))+j][0],normals[2+(i*(stacks_-2))+j][1],normals[2+(i*(stacks_-2))+j][2]);
         glVertex3d(points[2+(i*(stacks_-2))+j][0],points[2+(i*(stacks_-2))+j][1],points[2+(i*(stacks_-2))+j][2]);

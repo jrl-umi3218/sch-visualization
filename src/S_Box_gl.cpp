@@ -9,9 +9,9 @@
 using namespace sch;
 
 S_Box_GL::S_Box_GL(S_Box * obj)
-: S_Object_GL(obj)
-, box_(obj)
-, displist_(-1)
+  : S_Object_GL(obj)
+  , box_(obj)
+  , displist_(-1)
 {
   createDispList();
 }

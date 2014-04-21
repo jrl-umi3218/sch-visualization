@@ -18,9 +18,9 @@ inline short sign(Scalar i)
 }
 
 S_Superellipsoid_GL::S_Superellipsoid_GL(S_Superellipsoid * obj)
-: S_Object_GL(obj)
-, ellipse_(obj)
-, displist_(-1)
+  : S_Object_GL(obj)
+  , ellipse_(obj)
+  , displist_(-1)
 {
   createDispList();
 }
@@ -58,10 +58,10 @@ void S_Superellipsoid_GL::createDispList()
   double p2=pi<double>()/(stacks_-1);
 
 
-  for (int i=0;i<slices_;i++)
+  for (int i=0; i<slices_; i++)
   {
     Scalar latt=pi<double>()/2-p2;
-    for (int j=0;j<stacks_-2;j++)
+    for (int j=0; j<stacks_-2; j++)
     {
       c1=cos(latt);
       c2=cos(longit);
@@ -69,13 +69,13 @@ void S_Superellipsoid_GL::createDispList()
       s2=sin(longit);
 
       points.push_back(Point3(a_*pow(fabs(c1),epsilon1_)*pow(fabs(c2),epsilon2_)*sign(c1)*sign(c2),
-        b_*pow(fabs(c1),epsilon1_)*pow(fabs(s2),epsilon2_)*sign(s2)*sign(c1),
-        c_*pow(fabs(s1),epsilon1_)*sign(s1)));
+                              b_*pow(fabs(c1),epsilon1_)*pow(fabs(s2),epsilon2_)*sign(s2)*sign(c1),
+                              c_*pow(fabs(s1),epsilon1_)*sign(s1)));
 
 
       Vector3 n((1/a_)*pow(fabs(c1),2-epsilon1_)*pow(fabs(c2),2-epsilon2_)*sign(c1)*sign(c2),
-        (1/b_)*pow(fabs(c1),2-epsilon1_)*pow(fabs(s2),2-epsilon2_)*sign(s2)*sign(c1),
-        (1/c_)*pow(fabs(s1),2-epsilon1_)*sign(s1));
+                (1/b_)*pow(fabs(c1),2-epsilon1_)*pow(fabs(s2),2-epsilon2_)*sign(s2)*sign(c1),
+                (1/c_)*pow(fabs(s1),2-epsilon1_)*sign(s1));
 
       n.normalize();
 
@@ -91,7 +91,7 @@ void S_Superellipsoid_GL::createDispList()
   glNewList(displist_,GL_COMPILE);
   glBegin(GL_TRIANGLES);
 
-  for (int i=0;i<slices_;i++)
+  for (int i=0; i<slices_; i++)
   {
     glNormal3d(normals[0][0],normals[0][1],normals[0][2]);
     glVertex3d(points[0][0],points[0][1],points[0][2]);
@@ -115,9 +115,9 @@ void S_Superellipsoid_GL::createDispList()
     glVertex3d(points[stacks_-1+(i*(stacks_-2))][0],points[stacks_-1+(i*(stacks_-2))][1],points[stacks_-1+(i*(stacks_-2))][2]);
   }
 
-  for (int i=0;i<slices_;i++)
+  for (int i=0; i<slices_; i++)
   {
-    for (int j=0;j<stacks_-3;j++)
+    for (int j=0; j<stacks_-3; j++)
     {
       glNormal3d(normals[2+(i*(stacks_-2))+j][0],normals[2+(i*(stacks_-2))+j][1],normals[2+(i*(stacks_-2))+j][2]);
       glVertex3d(points[2+(i*(stacks_-2))+j][0],points[2+(i*(stacks_-2))+j][1],points[2+(i*(stacks_-2))+j][2]);

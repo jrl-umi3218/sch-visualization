@@ -20,7 +20,7 @@ using boost::math::constants::pi;
 using namespace sch;
 
 S_Object_GL::S_Object_GL(S_Object * obj)
-: obj_(obj)
+  : obj_(obj)
 {}
 
 void S_Object_GL::drawGL() const
@@ -75,8 +75,8 @@ sch::S_Object_GL* createGL(sch::S_Object* obj)
   }
   case(S_Object::TSTP_BV_WithPolyhedron):
   {
-  STP_BV * stp = dynamic_cast<STP_BV *>(obj);
-  return (new STP_BV_GL(stp));
+    STP_BV * stp = dynamic_cast<STP_BV *>(obj);
+    return (new STP_BV_GL(stp));
   }
   }
   return 0x0;
