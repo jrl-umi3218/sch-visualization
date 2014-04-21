@@ -12,7 +12,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 # --- Project declaration ----------------------------------------
 # ----------------------------------------------------------------
 
-SET(PROJECT_NAME scd)
+SET(PROJECT_NAME sch-visualization)
 SET(PROJECT_DESCRIPTION "Implementation of the Sphere-Torus Patches Bounding Volumes")
 set(PROJECT_CONTACT francois.keith@lirmm.fr)
 SET(PROJECT_URL "http://idh.lirmm.fr/projects/sch")
