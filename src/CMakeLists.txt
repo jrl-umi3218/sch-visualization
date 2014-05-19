@@ -17,7 +17,7 @@ add_library(sch_viewer SHARED
 )
 set_target_properties(sch_viewer PROPERTIES SOVERSION ${PROJECT_VERSION})
 target_link_libraries(sch_viewer ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
-PKG_CONFIG_USE_DEPENDENCY(sch_viewer sch)
+PKG_CONFIG_USE_DEPENDENCY(sch_viewer sch-core)
 
 install(TARGETS sch_viewer
         RUNTIME DESTINATION bin LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)

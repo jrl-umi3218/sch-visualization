@@ -15,7 +15,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 SET(PROJECT_NAME sch-visualization)
 SET(PROJECT_DESCRIPTION "Implementation of the Sphere-Torus Patches Bounding Volumes")
 set(PROJECT_CONTACT francois.keith@lirmm.fr)
-SET(PROJECT_URL "http://idh.lirmm.fr/projects/sch")
+SET(PROJECT_URL "http://idh.lirmm.fr/projects/sch/sch-vizualization")
 set(PROJECT_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 SETUP_PROJECT()
@@ -40,7 +40,7 @@ else(GLUT_FOUND)
 	endif(GLUT_FOUND)
 endif(GLUT_FOUND)
 
-ADD_REQUIRED_DEPENDENCY("sch")
+ADD_REQUIRED_DEPENDENCY("sch-core")
 
 # Optimisation flags when building with RELEASE
 #----------------------------------------------
@@ -48,7 +48,7 @@ PKG_CONFIG_APPEND_LIBS("sch_viewer")
 
 ADD_SUBDIRECTORY(include)
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(unitTestings)
+ADD_SUBDIRECTORY(tests)
 
 SETUP_PROJECT_FINALIZE()
 SETUP_PROJECT_CPACK()
