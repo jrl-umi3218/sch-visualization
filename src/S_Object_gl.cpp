@@ -50,7 +50,7 @@ sch::S_Object_GL* createGL(sch::S_Object* obj)
   }
   case(S_Object::TPolyhedron):
   {
-    Polyhedron_algorithms * polyhedron = dynamic_cast<Polyhedron_algorithms *>(obj);
+    S_Polyhedron * polyhedron = dynamic_cast<S_Polyhedron *>(obj);
     return (new Polyhedron_algorithms_GL(polyhedron));
   }
   case(S_Object::TSTP_BV):

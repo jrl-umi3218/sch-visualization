@@ -7,9 +7,9 @@
 #endif // __APPLE__
 
 using namespace sch;
-Polyhedron_algorithms_GL::Polyhedron_algorithms_GL(Polyhedron_algorithms *pa)
-  : S_Object_GL(0x0)
-  , pa_(pa)
+Polyhedron_algorithms_GL::Polyhedron_algorithms_GL(S_Polyhedron *sp)
+  : S_Object_GL(sp)
+  , pa_(sp->getPolyhedronAlgorithm())
   , displayList_(-1)
 {
   createDispList();
@@ -22,6 +22,7 @@ void Polyhedron_algorithms_GL::drawGLInLocalCordinates() const
 
 void Polyhedron_algorithms_GL::createDispList()
 {
+  assert(pa_ != 0x0);
   const std::vector<S_PolyhedronVertex*> & vertexes = pa_->vertexes_;
   const std::vector<PolyhedronTriangle> & triangles = pa_->triangles_;
 
@@ -36,7 +37,9 @@ void Polyhedron_algorithms_GL::createDispList()
 
     for (unsigned i=0; i<triangles.size(); i++)
     {
-      glNormal3d(triangles[i].normal[0],triangles[i].normal[1],triangles[i].normal[2]);
+      glNormal3d(triangles[i].normal[0],
+          triangles[i].normal[1],
+          triangles[i].normal[2]);
 
       glVertex3d(
         vertexes[triangles[i].a]->getCordinates()[0],
@@ -53,7 +56,6 @@ void Polyhedron_algorithms_GL::createDispList()
         vertexes[triangles[i].c]->getCordinates()[1],
         vertexes[triangles[i].c]->getCordinates()[2]);
     }
-
     glEnd();
     glEndList();
   }
