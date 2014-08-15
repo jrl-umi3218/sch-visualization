@@ -162,12 +162,10 @@ void TestMaterial::initializeUniverse()
   {
     STP_BV* s1 = new STP_BV();
     s1->constructFromFileWithGL("sample_stpbv1.txt");
-    stpObjects.push_back(s1);
     sObj.addObject(s1);
 
     STP_BV* s2 = new STP_BV();
     s2->constructFromFileWithGL("sample_stpbv2.txt");
-    stpObjects.push_back(s2);
     sObj.addObject(s2);
 
     //STP_BV_P sp;
@@ -212,10 +210,24 @@ void TestMaterial::initializeUniverse(const std::vector<std::string> & filenameL
 {
   for(unsigned i=0; i<filenameList.size(); ++i)
   {
-    STP_BV* s = new STP_BV();
-    s->constructFromFileWithGL(filenameList[i]);
-    stpObjects.push_back(s);
-    sObj.addObject(s);
+    std::string filename = filenameList[i];
+    std::string extension = "";
+    if(filename.find_last_of(".") != std::string::npos)
+    {
+      extension = filename.substr(filename.find_last_of(".")+1);
+    }
+    if(extension == "otp")
+    {
+      S_Polyhedron* s = new S_Polyhedron();
+      s->constructFromFile(filename);
+      sObj.addObject(s);
+    }
+    else //if(extension == "txt")
+    {
+      STP_BV* s = new STP_BV();
+      s->constructFromFileWithGL(filename);
+      sObj.addObject(s);
+    }
   }
 
   for (size_t i=0; i<sObj.size(); i++)
