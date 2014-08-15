@@ -1,4 +1,4 @@
-#include "shared-tests/tests/common.h"
+#include "shared-tests/examples/example_common.h"
 
 #include <stdlib.h>
 
@@ -43,7 +43,7 @@ GLfloat light1_position[] = {-1.0f, 0.0f, 0.2f, 0.0f},  background[]= {0.2,0.2,0
 
 
 
-TestMaterial universe;
+Example universe;
 
 void mul_mat_v(const double *mat,const double *vec,double *res)
 {
@@ -306,13 +306,12 @@ void display (void)
   for (size_t i=0; i<sObjGL.size(); ++i)
     sObjGL[i]->drawGL();
 
-  Vector3 p=universe.sObj[universe.CurrentObj]->getPosition();
+  Vector3 p=universe.sObj[0]->getPosition();
   glDisable (GL_LIGHTING);
 
+  {
   glPushMatrix();
-
   glTranslated(p[0],p[1],p[2]);
-
 
   glBegin(GL_LINES);
   glColor3d(1,0,0);
@@ -326,13 +325,10 @@ void display (void)
   glColor3d(0,0,1);
   glVertex3d(0,0,0);
   glVertex3d(0,0,1.5);
-
-
-
   glEnd();
 
   glPopMatrix();
-
+  }
   glColor3d(1,1,0.2);
 
   glBegin(GL_LINES);
@@ -340,17 +336,11 @@ void display (void)
   {
     for (size_t j=0; j<i; ++j)
     {
-      Point3 p1,p2;
-
-      Scalar d = universe.sObj.getWitnessPoints(i,j,p1,p2);
-
-#ifdef DISPLAY_DISTANCE
-      std::cout<<d<<' '<<(p1-p2).normsquared()<<' '<<fabs(d)-fabs((p1-p2).normsquared())<<std::endl;
-#endif
-
+      Point3 p1(0,0,0);
+      Point3 p2(0,0,0);
+      universe.sObj.getWitnessPoints(i,j,p1,p2);
       glVertex3d(p1[0],p1[1],p1[2]);
       glVertex3d(p2[0],p2[1],p2[2]);
-
     }
   }
   glEnd();
@@ -400,26 +390,6 @@ keyPress (unsigned char key, int /*x*/, int /*y*/)
     break;
   case 8:
     universe.CurrentObj=(universe.CurrentObj-1)%universe.sObj.size();
-    break;
-
-  case '0':
-    universe.RandomTestSupportFunction();
-    break;
-
-  case '1':
-    universe.TestAnimation();
-    break;
-
-  case '2':
-    universe.TestPrecision();
-    break;
-
-  case '3':
-    universe.RandomTestSupportFunctionAllObjects();
-    break;
-
-  case '5':
-    universe.GeneralTest();
     break;
   }
 
@@ -583,7 +553,7 @@ mouseMotion (int x, int y)
   mouse.y = y;
 
 
-  universe.DoTest();
+  universe.displayScene();
 
   glutPostRedisplay ();
 }

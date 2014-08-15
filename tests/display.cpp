@@ -1,4 +1,4 @@
-#include "common.h"
+#include "shared-tests/tests/common.h"
 
 #include <stdlib.h>
 
