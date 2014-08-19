@@ -38,8 +38,8 @@ void Polyhedron_algorithms_GL::createDispList()
     for (unsigned i=0; i<triangles.size(); i++)
     {
       glNormal3d(triangles[i].normal[0],
-          triangles[i].normal[1],
-          triangles[i].normal[2]);
+                 triangles[i].normal[1],
+                 triangles[i].normal[2]);
 
       glVertex3d(
         vertexes[triangles[i].a]->getCordinates()[0],

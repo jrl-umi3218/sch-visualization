@@ -310,24 +310,24 @@ void display (void)
   glDisable (GL_LIGHTING);
 
   {
-  glPushMatrix();
-  glTranslated(p[0],p[1],p[2]);
+    glPushMatrix();
+    glTranslated(p[0],p[1],p[2]);
 
-  glBegin(GL_LINES);
-  glColor3d(1,0,0);
-  glVertex3d(0,0,0);
-  glVertex3d(1.5,0,0);
+    glBegin(GL_LINES);
+    glColor3d(1,0,0);
+    glVertex3d(0,0,0);
+    glVertex3d(1.5,0,0);
 
-  glColor3d(0,1,0);
-  glVertex3d(0,0,0);
-  glVertex3d(0,1.5,0);
+    glColor3d(0,1,0);
+    glVertex3d(0,0,0);
+    glVertex3d(0,1.5,0);
 
-  glColor3d(0,0,1);
-  glVertex3d(0,0,0);
-  glVertex3d(0,0,1.5);
-  glEnd();
+    glColor3d(0,0,1);
+    glVertex3d(0,0,0);
+    glVertex3d(0,0,1.5);
+    glEnd();
 
-  glPopMatrix();
+    glPopMatrix();
   }
   glColor3d(1,1,0.2);
 

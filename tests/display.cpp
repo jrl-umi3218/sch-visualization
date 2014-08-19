@@ -647,7 +647,7 @@ main (int argc, char *argv[])
 {
   if (argc == 1)
   {
-    std::cout << "This script taskes into parameters the names of the sch volumes" 
+    std::cout << "This script taskes into parameters the names of the sch volumes"
               << " to display"<< std::endl;
     return -1;
   }
