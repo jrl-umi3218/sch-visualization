@@ -24,7 +24,6 @@ macro(add_example name)
   target_link_libraries(${name}_test sch_viewer)
   add_dependencies(${name}_test sch_viewer)
   PKG_CONFIG_USE_DEPENDENCY(${name}_test sch-core)
-  add_test(${name} ${name}_test)
 endmacro(add_example)
 
 add_example(example1)
