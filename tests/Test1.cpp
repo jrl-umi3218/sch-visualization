@@ -1,4 +1,4 @@
-#define NON_STP_BV_OBJECTS
+#define NON_STP_BV_OBJECTS  true
 
 #include "shared-tests/tests/common.h"
 
@@ -45,7 +45,7 @@ GLfloat light1_position[] = {-1.0f, 0.0f, 0.2f, 0.0f},  background[]= {0.2,0.2,0
 
 
 
-TestMaterial universe;
+TestMaterial universe(NON_STP_BV_OBJECTS);
 
 void mul_mat_v(const double *mat,const double *vec,double *res)
 {
