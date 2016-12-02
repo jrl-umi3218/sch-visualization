@@ -45,10 +45,6 @@ sch::S_Object_GL* createGL(sch::S_Object* obj)
 
   switch(type)
   {
-  case(S_Object::TS_Object):
-  {
-    return (new S_Object_Raw_GL(obj));
-  }
   case(S_Object::TPolyhedron):
   {
     S_Polyhedron * polyhedron = dynamic_cast<S_Polyhedron *>(obj);
@@ -83,6 +79,10 @@ sch::S_Object_GL* createGL(sch::S_Object* obj)
   {
     S_Point * stp = dynamic_cast<S_Point *>(obj);
     return (new S_Point_GL(stp));
+  }
+  default:
+  {
+    return (new S_Object_Raw_GL(obj));
   }
   }
   return 0x0;
