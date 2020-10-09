@@ -27,9 +27,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-16.04,ubuntu-18.04]
+        os: [ubuntu-16.04,ubuntu-18.04,macos-latest]
         build-type: [RelWithDebInfo, Release]
         compiler: [gcc, clang]
+        exclude:
+          # Only default compiler on macos-latest and windows-latest
+          - os: macos-latest
+            compiler: clang
+          - os: windows-latest
+            compiler: clang
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -42,7 +48,11 @@ jobs:
         compiler: ${{ matrix.compiler }}
         build-type: ${{ matrix.build-type }}
         ubuntu: |
-          apt: doxygen doxygen-latex libboost-all-dev freeglut3-dev libxmu-dev libxi-dev
+          apt: doxygen doxygen-latex libboost-all-dev freeglut3-dev
+          # libxmu-dev libxi-dev
+        macos: |
+          brew: boost freeglut doxygen
+          cask: xquartz
         github: |
           - path: jrl-umi3218/sch-core
     - name: Build and test
