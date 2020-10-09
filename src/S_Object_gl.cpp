@@ -75,7 +75,7 @@ sch::S_Object_GL* createGL(sch::S_Object* obj)
     STP_BV * stp = dynamic_cast<STP_BV *>(obj);
     return (new STP_BV_GL(stp));
   }
-  case(S_Object::T_Point):
+  case(S_Object::TPoint):
   {
     S_Point * stp = dynamic_cast<S_Point *>(obj);
     return (new S_Point_GL(stp));
