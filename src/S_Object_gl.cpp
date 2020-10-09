@@ -5,6 +5,7 @@
 #include "S_Sphere_gl.h"
 #include "S_Supperellipsoid_gl.h"
 #include "Polyhedron_algorithms_gl.h"
+#include "S_Point_gl.h"
 #include "STPBV_gl.h"
 
 #include <boost/math/constants/constants.hpp>
@@ -44,10 +45,6 @@ sch::S_Object_GL* createGL(sch::S_Object* obj)
 
   switch(type)
   {
-  case(S_Object::TS_Object):
-  {
-    return (new S_Object_Raw_GL(obj));
-  }
   case(S_Object::TPolyhedron):
   {
     S_Polyhedron * polyhedron = dynamic_cast<S_Polyhedron *>(obj);
@@ -77,6 +74,15 @@ sch::S_Object_GL* createGL(sch::S_Object* obj)
   {
     STP_BV * stp = dynamic_cast<STP_BV *>(obj);
     return (new STP_BV_GL(stp));
+  }
+  case(S_Object::TPoint):
+  {
+    S_Point * stp = dynamic_cast<S_Point *>(obj);
+    return (new S_Point_GL(stp));
+  }
+  default:
+  {
+    return (new S_Object_Raw_GL(obj));
   }
   }
   return 0x0;

@@ -54,13 +54,13 @@ void S_Superellipsoid_GL::createDispList()
 
   Scalar longit=0;
 
-  double p1=pi<double>()*2/slices_;
-  double p2=pi<double>()/(stacks_-1);
+  double p1=pi*2/slices_;
+  double p2=pi/(stacks_-1);
 
 
   for (int i=0; i<slices_; i++)
   {
-    Scalar latt=pi<double>()/2-p2;
+    Scalar latt=pi/2-p2;
     for (int j=0; j<stacks_-2; j++)
     {
       c1=cos(latt);
