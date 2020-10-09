@@ -6,20 +6,20 @@
 
 namespace sch
 {
-  class S_Superellipsoid_GL: public S_Object_GL
-  {
-  public:
-    S_Superellipsoid_GL(S_Superellipsoid * obj);
-    ~S_Superellipsoid_GL();
+class S_Superellipsoid_GL : public S_Object_GL
+{
+public:
+  S_Superellipsoid_GL(S_Superellipsoid * obj);
+  ~S_Superellipsoid_GL();
 
-    virtual void drawGLInLocalCordinates() const;
+  virtual void drawGLInLocalCordinates() const;
 
-  private:
-    void createDispList();
+private:
+  void createDispList();
 
-    S_Superellipsoid * ellipse_;
-    int displist_;
-  };
-}
+  S_Superellipsoid * ellipse_;
+  int displist_;
+};
+} // namespace sch
 
 #endif // _S_SUPERELLIPSOID_GL

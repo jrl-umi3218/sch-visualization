@@ -6,19 +6,19 @@
 
 namespace sch
 {
-  class S_Point_GL : public S_Object_GL
-  {
-  public:
-    S_Point_GL(S_Point * obj);
+class S_Point_GL : public S_Object_GL
+{
+public:
+  S_Point_GL(S_Point * obj);
 
-    virtual void drawGLInLocalCordinates() const;
+  virtual void drawGLInLocalCordinates() const;
 
-  private:
-    void createDispList();
+private:
+  void createDispList();
 
-    S_Point * point_;
-    int displist_;
-  };
-}
+  S_Point * point_;
+  int displist_;
+};
+} // namespace sch
 
 #endif // _S_POINT_GL_H

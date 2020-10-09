@@ -6,20 +6,20 @@
 
 namespace sch
 {
-  class S_Box_GL: public S_Object_GL
-  {
-  public:
-    S_Box_GL(S_Box * obj);
-    ~S_Box_GL();
+class S_Box_GL : public S_Object_GL
+{
+public:
+  S_Box_GL(S_Box * obj);
+  ~S_Box_GL();
 
-    virtual void drawGLInLocalCordinates() const;
+  virtual void drawGLInLocalCordinates() const;
 
-  private:
-    void createDispList();
+private:
+  void createDispList();
 
-    S_Box * box_;
-    int displist_;
-  };
-}
+  S_Box * box_;
+  int displist_;
+};
+} // namespace sch
 
 #endif // _S_BOX_GL_H
