@@ -1,6 +1,8 @@
 sch-visualization
 =================
 
+![CI of sch-visualization](https://github.com/jrl-umi3218/sch-visualization/workflows/CI%20of%20sch-visualization/badge.svg)
+
 
 Documentation
 -------------
