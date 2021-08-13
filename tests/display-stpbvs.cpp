@@ -674,7 +674,7 @@ std::vector<std::string> getFilenameList(std::string &path,
       // find the file name at the beggining of the string
       // and add to the filename list
       if(aFile.find(file) == 0)
-        names.push_back(aFile);
+        names.push_back(path+aFile);
 
       // increase iterator
       it++;
@@ -684,7 +684,7 @@ std::vector<std::string> getFilenameList(std::string &path,
   // sort the filename list alphabetically
   sort(names.begin(), names.end(), alphabeticalSort);
   // resize to the number of files given
-  if(n < names.size())
+  if(n <= names.size())
     names.resize(n);
   else
   {
