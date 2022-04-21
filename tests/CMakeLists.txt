@@ -56,6 +56,12 @@ add_executable(sch_display display.cpp shared-tests/tests/common.cpp shared-test
 target_link_libraries(sch_display ${Boost_LIBRARIES})
 target_link_libraries(sch_display ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
 target_link_libraries(sch_display sch_viewer)
+
+add_executable(sch_display_stpbvs display-stpbvs.cpp shared-tests/tests/common-stpbvs.cpp shared-tests/tests/common.h shared-tests/tests/includes.h)
+target_link_libraries(sch_display_stpbvs ${Boost_LIBRARIES})
+target_link_libraries(sch_display_stpbvs ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
+target_link_libraries(sch_display_stpbvs sch_viewer)
+
 add_dependencies(sch_display sch_viewer)
 PKG_CONFIG_USE_DEPENDENCY(sch_display sch-core)
 

@@ -6,19 +6,19 @@
 
 namespace sch
 {
-  class S_Sphere_GL : public S_Object_GL
-  {
-  public:
-    S_Sphere_GL(S_Sphere * obj);
+class S_Sphere_GL : public S_Object_GL
+{
+public:
+  S_Sphere_GL(S_Sphere * obj);
 
-    virtual void drawGLInLocalCordinates() const;
+  virtual void drawGLInLocalCordinates() const;
 
-  private:
-    void createDispList();
+private:
+  void createDispList();
 
-    S_Sphere * sphere_;
-    int displist_;
-  };
-}
+  S_Sphere * sphere_;
+  int displist_;
+};
+} // namespace sch
 
 #endif // _S_SPHERE_GL_H
