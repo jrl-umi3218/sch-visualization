@@ -1,6 +1,6 @@
 [submodule "cmake"]
 	path = cmake
-	url = git://github.com/jrl-umi3218/jrl-cmakemodules
+	url = https://github.com/jrl-umi3218/jrl-cmakemodules
 [submodule "tests/shared-tests"]
 	path = tests/shared-tests
-	url = git://github.com/jrl-umi3218/sch-shared-tests
+	url = https://github.com/jrl-umi3218/sch-shared-tests
